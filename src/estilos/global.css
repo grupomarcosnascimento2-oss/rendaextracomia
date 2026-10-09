@@ -1216,3 +1216,18 @@ h4 {
 .secao > .anuncio .anuncio-rotulo {
   text-align: center;
 }
+
+/* O banner da Adcash vem com 728 px de largura. Aqui ele encolhe para caber na coluna
+   e no celular, sem barras de rolagem. */
+.anuncio-espaco {
+  overflow: hidden;
+  line-height: 0;
+}
+.anuncio-espaco > * {
+  max-width: 100% !important;
+  height: auto !important;
+}
+.anuncio-espaco img {
+  max-width: 100% !important;
+  height: auto !important;
+}
