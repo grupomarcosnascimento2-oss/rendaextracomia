@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Calculadora from '../components/Calculadora.astro';
 import Cartao from '../components/Cartao.astro';
 import Capa from '../components/Capa.astro';
+import Anuncio from '../components/Anuncio.astro';
 import { site, trilhas } from '../config';
 import { todosOsArtigos, linkDoArtigo } from '../lib/artigos';
 
@@ -48,6 +49,7 @@ const dados = [
     <div class="grade">
       {paraComecar.map((a) => <Cartao artigo={a} comResumo />)}
     </div>
+    <Anuncio />
   </section>
 
   <section class="secao envolve" id="trilhas" aria-labelledby="trilhas-titulo">

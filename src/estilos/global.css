@@ -1189,3 +1189,30 @@ h4 {
   text-decoration-thickness: 0.06em;
   cursor: pointer;
 }
+
+/* Banner de publicidade: só aparece para quem aceitou os cookies */
+.anuncio {
+  margin-top: 2.5rem;
+  max-width: 100%;
+  min-width: 0;
+}
+.anuncio[hidden] {
+  display: none;
+}
+.anuncio-rotulo {
+  margin: 0 0 0.5rem;
+  font-size: var(--t-1);
+  color: var(--suave);
+}
+.anuncio-espaco {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.secao > .anuncio .anuncio-espaco {
+  justify-content: center;
+}
+.secao > .anuncio .anuncio-rotulo {
+  text-align: center;
+}

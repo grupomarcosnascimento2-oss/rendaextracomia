@@ -1,0 +1,14 @@
+---
+// Espaço de banner da Adcash. Fica oculto até o visitante aceitar os cookies;
+// quem monta o banner é o script do cabeçalho (layouts/Base.astro).
+import { site } from '../config';
+---
+
+{
+  site.adcashBanner && (
+    <aside class="anuncio" aria-label="Publicidade" hidden>
+      <p class="anuncio-rotulo">Publicidade</p>
+      <div class="anuncio-espaco" data-anuncio-banner={site.adcashBanner} />
+    </aside>
+  )
+}

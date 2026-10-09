@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Cartao from '../../components/Cartao.astro';
 import Capa from '../../components/Capa.astro';
+import Anuncio from '../../components/Anuncio.astro';
 import { trilhas } from '../../config';
 import { todosOsArtigos } from '../../lib/artigos';
 
@@ -35,6 +36,7 @@ const cores = `--cor:${trilha.cor};--cor-escura:${trilha.corEscura}`;
     <div class="grade">
       {artigos.map((a) => <Cartao artigo={a} comResumo nivel="h2" />)}
     </div>
+    <Anuncio />
   </section>
 
   <section class="secao envolve" aria-labelledby="outras">

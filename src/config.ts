@@ -13,6 +13,8 @@ export const site = {
   indexavel: false,
   // Publicidade: código da zona na rede Adcash. Deixe '' para desligar os anúncios.
   adcashZona: '4wozlozcss',
+  // Zona do banner da Adcash, exibido no fim dos artigos e nas páginas de lista. '' desliga o banner.
+  adcashBanner: '12292814',
   cotacaoDolar: 5.15,
   conferidoEm: 'outubro de 2026',
 };

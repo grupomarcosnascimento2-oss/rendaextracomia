@@ -23,9 +23,28 @@ const pagina = Astro.url.pathname;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {
-      site.adcashZona && (
+      (site.adcashZona || site.adcashBanner) && (
         <script is:inline define:vars={{ zona: site.adcashZona }}>
-          // Anúncios Adcash: a biblioteca e a tag só entram na página com o consentimento do visitante.
+          // Anúncios Adcash: a biblioteca, a tag e os banners só entram na página com o consentimento do visitante.
+          // Cada banner é montado dentro do seu próprio espaço, como a Adcash pede.
+          // Atenção: antes de a biblioteca carregar, window.aclib aponta para a própria tag <script id="aclib">.
+          // Por isso o teste é pela função, e não só pela existência de window.aclib.
+          var bibliotecaPronta = function () {
+            return !!window.aclib && typeof window.aclib.runBanner === 'function';
+          };
+          window.montarBanners = function () {
+            if (!bibliotecaPronta()) return;
+            var espacos = document.querySelectorAll('[data-anuncio-banner]:not([data-montado])');
+            for (var i = 0; i < espacos.length; i++) {
+              var espaco = espacos[i];
+              espaco.setAttribute('data-montado', '');
+              espaco.parentElement.hidden = false;
+              var tag = document.createElement('script');
+              tag.type = 'text/javascript';
+              tag.text = "aclib.runBanner({ zoneId: '" + espaco.getAttribute('data-anuncio-banner') + "' });";
+              espaco.appendChild(tag);
+            }
+          };
           window.carregarAnuncios = function () {
             if (document.getElementById('aclib')) return;
             var s = document.createElement('script');
@@ -33,10 +52,13 @@ const pagina = Astro.url.pathname;
             s.type = 'text/javascript';
             s.src = '//acscdn.com/script/aclib.js';
             s.onload = function () {
-              if (window.aclib) window.aclib.runAutoTag({ zoneId: zona });
+              if (!bibliotecaPronta()) return;
+              if (zona) window.aclib.runAutoTag({ zoneId: zona });
+              window.montarBanners();
             };
             document.head.appendChild(s);
           };
+          document.addEventListener('DOMContentLoaded', window.montarBanners);
           try {
             if (localStorage.getItem('consentimento-cookies') === 'aceito') window.carregarAnuncios();
           } catch (e) {}
@@ -89,12 +111,12 @@ const pagina = Astro.url.pathname;
           <a href="/fontes/">Fontes</a>
           <a href="/aviso-legal/">Aviso legal</a>
           <a href="/privacidade/">Privacidade</a>
-          {site.adcashZona && <button type="button" class="base-botao" data-abrir-cookies>Preferências de cookies</button>}
+          {(site.adcashZona || site.adcashBanner) && <button type="button" class="base-botao" data-abrir-cookies>Preferências de cookies</button>}
         </nav>
       </div>
     </footer>
 
-    {site.adcashZona && <Consentimento />}
+    {(site.adcashZona || site.adcashBanner) && <Consentimento />}
 
     <script>
       import '../scripts/capas.ts';
