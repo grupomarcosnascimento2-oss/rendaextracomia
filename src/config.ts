@@ -11,6 +11,8 @@ export const site = {
   },
   // Enquanto for false, o site pede aos buscadores que não o indexem (versão de teste).
   indexavel: false,
+  // Publicidade: código da zona na rede Adcash. Deixe '' para desligar os anúncios.
+  adcashZona: '4wozlozcss',
   cotacaoDolar: 5.15,
   conferidoEm: 'outubro de 2026',
 };
