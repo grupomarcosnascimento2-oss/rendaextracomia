@@ -1118,3 +1118,74 @@ h4 {
     right: max(2.5rem, calc((100vw - var(--largura)) / 2 + 2.5rem));
   }
 }
+
+/* Aviso de cookies */
+.aviso-cookies {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: min(calc(100% - 2rem), 52rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--raio);
+  color: #fff;
+  background: var(--noite);
+  border: 1px solid rgb(255 255 255 / 0.18);
+  box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.6);
+}
+.aviso-cookies[hidden] {
+  display: none;
+}
+.aviso-cookies-texto {
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+.aviso-cookies h2 {
+  font-size: var(--t0);
+  margin-bottom: 0.3rem;
+}
+.aviso-cookies p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: rgb(255 255 255 / 0.84);
+}
+.aviso-cookies a {
+  color: #fff;
+}
+.aviso-cookies-botoes {
+  display: flex;
+  gap: 0.6rem;
+  flex: 0 0 auto;
+}
+/* Os dois botões têm o mesmo peso: recusar é tão fácil quanto aceitar. */
+.aviso-botao {
+  font: inherit;
+  font-weight: 700;
+  color: var(--noite);
+  background: #fff;
+  border: 0;
+  border-radius: 99rem;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.aviso-botao:hover {
+  background: var(--ouro);
+}
+.base-botao {
+  font: inherit;
+  color: #fff;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.06em;
+  cursor: pointer;
+}

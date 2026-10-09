@@ -1,0 +1,60 @@
+---
+// Aviso de cookies. Os anúncios só são carregados depois que o visitante aceita.
+// A escolha fica guardada no navegador dele e pode ser mudada pelo link do rodapé.
+---
+
+<section class="aviso-cookies" id="aviso-cookies" aria-label="Aviso de cookies" hidden>
+  <div class="aviso-cookies-texto">
+    <h2>Cookies de publicidade</h2>
+    <p>
+      Este blog se mantém com anúncios da rede Adcash, que usa cookies para exibir e medir a publicidade. Se você
+      recusar, o blog funciona igual, sem anúncios. <a href="/privacidade/">Ler a página de Privacidade</a>
+    </p>
+  </div>
+  <div class="aviso-cookies-botoes">
+    <button type="button" class="aviso-botao" id="cookies-recusar">Recusar</button>
+    <button type="button" class="aviso-botao" id="cookies-aceitar">Aceitar</button>
+  </div>
+</section>
+
+<script>
+  const CHAVE = 'consentimento-cookies';
+  const aviso = document.getElementById('aviso-cookies')!;
+  const ler = () => {
+    try {
+      return localStorage.getItem(CHAVE);
+    } catch {
+      return null;
+    }
+  };
+  const guardar = (valor: string) => {
+    try {
+      localStorage.setItem(CHAVE, valor);
+    } catch {
+      /* sem armazenamento: a escolha vale só para esta página */
+    }
+  };
+
+  if (!ler()) aviso.hidden = false;
+
+  document.getElementById('cookies-aceitar')!.addEventListener('click', () => {
+    guardar('aceito');
+    aviso.hidden = true;
+    (window as any).carregarAnuncios?.();
+  });
+
+  document.getElementById('cookies-recusar')!.addEventListener('click', () => {
+    const anunciosAtivos = !!document.getElementById('aclib');
+    guardar('recusado');
+    aviso.hidden = true;
+    // Se os anúncios já estavam ligados, recarrega a página para desligá-los.
+    if (anunciosAtivos) location.reload();
+  });
+
+  document.querySelectorAll('[data-abrir-cookies]').forEach((el) =>
+    el.addEventListener('click', () => {
+      aviso.hidden = false;
+      document.getElementById('cookies-aceitar')!.focus();
+    }),
+  );
+</script>

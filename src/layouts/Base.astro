@@ -3,6 +3,7 @@ import '@fontsource-variable/archivo/wdth.css';
 import '@fontsource-variable/literata';
 import '../estilos/global.css';
 import { site } from '../config';
+import Consentimento from '../components/Consentimento.astro';
 
 interface Props {
   titulo?: string;
@@ -23,10 +24,23 @@ const pagina = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {
       site.adcashZona && (
-        <>
-          <script is:inline id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" />
-          <script is:inline type="text/javascript" set:html={`aclib.runAutoTag({ zoneId: '${site.adcashZona}' });`} />
-        </>
+        <script is:inline define:vars={{ zona: site.adcashZona }}>
+          // Anúncios Adcash: a biblioteca e a tag só entram na página com o consentimento do visitante.
+          window.carregarAnuncios = function () {
+            if (document.getElementById('aclib')) return;
+            var s = document.createElement('script');
+            s.id = 'aclib';
+            s.type = 'text/javascript';
+            s.src = '//acscdn.com/script/aclib.js';
+            s.onload = function () {
+              if (window.aclib) window.aclib.runAutoTag({ zoneId: zona });
+            };
+            document.head.appendChild(s);
+          };
+          try {
+            if (localStorage.getItem('consentimento-cookies') === 'aceito') window.carregarAnuncios();
+          } catch (e) {}
+        </script>
       )
     }
     <title>{tituloCompleto}</title>
@@ -75,9 +89,12 @@ const pagina = Astro.url.pathname;
           <a href="/fontes/">Fontes</a>
           <a href="/aviso-legal/">Aviso legal</a>
           <a href="/privacidade/">Privacidade</a>
+          {site.adcashZona && <button type="button" class="base-botao" data-abrir-cookies>Preferências de cookies</button>}
         </nav>
       </div>
     </footer>
+
+    {site.adcashZona && <Consentimento />}
 
     <script>
       import '../scripts/capas.ts';
