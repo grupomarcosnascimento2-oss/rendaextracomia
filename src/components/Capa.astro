@@ -1,0 +1,10 @@
+---
+// Capa ilustrada: um guilhochê desenhado no navegador a partir do número do artigo.
+interface Props {
+  semente: number;
+  aneis?: number;
+}
+const { semente, aneis = 12 } = Astro.props;
+---
+
+<canvas class="capa-desenho" data-capa={semente} data-aneis={aneis} aria-hidden="true"></canvas>

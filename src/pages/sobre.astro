@@ -1,0 +1,43 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import { site } from '../config';
+---
+
+<Pagina titulo="Sobre o blog" descricao={`Quem escreve o ${site.nome}, como o conteúdo é feito e o que o blog se compromete a não prometer.`}>
+  <p>
+    O {site.nome} é para quem quer complementar a renda usando inteligência artificial e não aceita promessa de
+    dinheiro fácil. Aqui, toda meta vem acompanhada da conta: quantas horas, a que valor, com quais riscos.
+  </p>
+
+  <h2>O que você encontra</h2>
+  <p>
+    São 30 artigos organizados em <a href="/#trilhas">cinco trilhas</a>. Eles começam pelas formas reais de ganhar
+    dinheiro na internet, explicam o trabalho de treinar inteligências artificiais, mostram onde procurar
+    oportunidades e terminam com planejamento e gestão da própria renda.
+  </p>
+
+  <h2>Como o conteúdo é feito</h2>
+  <ul>
+    <li>
+      Os dados vêm de fontes públicas: anúncios de vagas, relatórios e reportagens. Todas estão na página de
+      <a href="/fontes/">fontes</a>.
+    </li>
+    <li>Todo valor tem data. Remuneração, plataformas e países aceitos mudam, e os artigos avisam quando foram conferidos.</li>
+    <li>R$ 100 por dia é tratado como meta de planejamento. Nenhum texto garante resultado.</li>
+    <li>O blog não recebe comissão de nenhuma plataforma citada. Se isso mudar, o aviso aparecerá no próprio artigo.</li>
+  </ul>
+
+  <h2>Quem escreve</h2>
+  <p>{site.autor.nome}. {site.autor.bio}</p>
+
+  <h2>O que este blog não faz</h2>
+  <ul>
+    <li>Não vende acesso a tarefas, listas secretas ou contas prontas.</li>
+    <li>Não pede depósito, Pix ou cadastro para liberar ganhos.</li>
+    <li>Não substitui a orientação de um contador sobre impostos e formalização.</li>
+  </ul>
+  <p>
+    Recebeu uma proposta de tarefas pagas por mensagem? Leia antes
+    <a href="/artigos/como-identificar-golpes-de-renda-extra/">como identificar golpes de renda extra</a>.
+  </p>
+</Pagina>

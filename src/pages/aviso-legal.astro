@@ -1,0 +1,44 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import { site } from '../config';
+---
+
+<Pagina titulo="Aviso legal" descricao={`Limites do conteúdo do ${site.nome}: sem garantia de ganhos, sem vínculo com as plataformas citadas e sem aconselhamento financeiro ou tributário.`}>
+  <h2>Sem garantia de ganhos</h2>
+  <p>
+    O conteúdo deste blog é informativo. Os valores, exemplos e cálculos mostram possibilidades e não representam
+    promessa nem garantia de renda. O resultado de cada pessoa depende de aprovação em processos seletivos,
+    disponibilidade de tarefas, tempo dedicado, qualificação e condições de mercado.
+  </p>
+
+  <h2>Informações que mudam</h2>
+  <p>
+    Remuneração, países aceitos, formas de pagamento e regras das plataformas são alterados com frequência pelas
+    empresas. Os artigos indicam quando os dados foram conferidos. Confirme sempre na página oficial antes de tomar
+    uma decisão.
+  </p>
+
+  <h2>Plataformas e marcas citadas</h2>
+  <p>
+    As empresas e plataformas mencionadas são citadas a título de informação. O blog não tem vínculo com elas, não
+    as representa e não responde pelos serviços que prestam. A menção a uma plataforma não é recomendação.
+  </p>
+
+  <h2>Impostos, finanças e questões legais</h2>
+  <p>
+    Os textos sobre impostos, formalização e finanças pessoais são gerais e não substituem a orientação de um
+    contador, advogado ou outro profissional habilitado, que pode avaliar a sua situação.
+  </p>
+
+  <h2>Calculadora</h2>
+  <p>
+    A calculadora da página inicial faz uma multiplicação simples com os números que você informa. O resultado é
+    bruto e não considera taxas de conversão, tarifas de saque, impostos nem períodos sem tarefas.
+  </p>
+
+  <h2>Segurança</h2>
+  <p>
+    Este blog nunca pede pagamento, depósito ou dados bancários. Se alguém usar o nome do blog para oferecer tarefas
+    pagas por mensagem, trata-se de fraude.
+  </p>
+</Pagina>

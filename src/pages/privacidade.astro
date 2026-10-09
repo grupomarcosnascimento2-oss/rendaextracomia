@@ -1,0 +1,34 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import { site } from '../config';
+---
+
+<Pagina titulo="Privacidade" descricao={`Quais dados o ${site.nome} coleta de quem visita o site e como eles são tratados.`}>
+  <h2>O que o site coleta</h2>
+  <p>
+    O blog não tem cadastro, formulário nem área de login. Ele não usa cookies de publicidade nem ferramentas de
+    rastreamento de visitantes.
+  </p>
+
+  <h2>Registros de acesso</h2>
+  <p>
+    Como qualquer site, o serviço de hospedagem registra dados técnicos de cada acesso, como endereço IP, data, hora
+    e página visitada. Esses registros servem para manter o site no ar e protegê-lo contra abusos.
+  </p>
+
+  <h2>Calculadora</h2>
+  <p>
+    Os números digitados na calculadora ficam apenas no seu navegador. Eles não são enviados nem armazenados.
+  </p>
+
+  <h2>Links externos</h2>
+  <p>
+    Os artigos e a página de fontes têm links para outros sites, que seguem as próprias políticas de privacidade.
+  </p>
+
+  <h2>Mudanças nesta página</h2>
+  <p>
+    Se o blog passar a usar estatísticas de acesso, lista de e-mails ou anúncios, esta página será atualizada antes,
+    com a descrição dos dados coletados e de como pedir a exclusão.
+  </p>
+</Pagina>

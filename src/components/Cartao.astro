@@ -1,0 +1,36 @@
+---
+import Capa from './Capa.astro';
+import Ilustracao from './Ilustracao.astro';
+import { trilhaDe } from '../config';
+import { linkDoArtigo, minutosDeLeitura, type Artigo } from '../lib/artigos';
+
+interface Props {
+  artigo: Artigo;
+  comResumo?: boolean;
+  nivel?: 'h2' | 'h3' | 'h4';
+}
+const { artigo, comResumo = false, nivel: Titulo = 'h3' } = Astro.props;
+const t = trilhaDe(artigo.data.trilha);
+const numero = String(artigo.data.numero).padStart(2, '0');
+---
+
+<a
+  class="cartao"
+  href={linkDoArtigo(artigo)}
+  data-anima
+  data-trilha={t.numero}
+  data-busca={`${artigo.data.titulo} ${artigo.data.descricao}`.toLowerCase()}
+  style={`--cor:${t.cor};--cor-escura:${t.corEscura}`}
+>
+  <span class="cartao-capa">
+    <Capa semente={artigo.data.numero} />
+    <Ilustracao numero={artigo.data.numero} />
+    <span class="cartao-numero" aria-hidden="true">{numero}</span>
+  </span>
+  <span class="cartao-corpo">
+    <span class="etiqueta"><i></i>{t.curto}</span>
+    <Titulo class="cartao-titulo">{artigo.data.titulo}</Titulo>
+    {comResumo && <span class="cartao-resumo">{artigo.data.descricao}</span>}
+    <span class="cartao-pe">Leitura de {minutosDeLeitura(artigo)} min</span>
+  </span>
+</a>

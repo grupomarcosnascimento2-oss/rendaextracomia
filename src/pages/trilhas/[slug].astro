@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+import Cartao from '../../components/Cartao.astro';
+import Capa from '../../components/Capa.astro';
+import { trilhas } from '../../config';
+import { todosOsArtigos } from '../../lib/artigos';
+
+export async function getStaticPaths() {
+  const artigos = await todosOsArtigos();
+  return trilhas.map((t) => ({
+    params: { slug: t.slug },
+    props: { trilha: t, artigos: artigos.filter((a) => a.data.trilha === t.numero) },
+  }));
+}
+const { trilha, artigos } = Astro.props;
+const outras = trilhas.filter((t) => t.numero !== trilha.numero);
+const cores = `--cor:${trilha.cor};--cor-escura:${trilha.corEscura}`;
+---
+
+<Base titulo={trilha.nome} descricao={`${trilha.resumo} ${artigos.length} artigos da trilha ${trilha.numero}.`}>
+  <header class="faixa" style={cores}>
+    <Capa semente={100 + trilha.numero} aneis={16} />
+    <div class="envolve">
+      <a class="migalha" href="/#trilhas"><i></i>Todas as trilhas</a>
+      <h1>{trilha.nome}</h1>
+      <p class="lide">{trilha.resumo}</p>
+      <ul class="dados">
+        <li>Trilha {trilha.numero} de {trilhas.length}</li>
+        <li>{artigos.length} artigos</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="secao envolve" aria-label="Artigos desta trilha">
+    <div class="grade">
+      {artigos.map((a) => <Cartao artigo={a} comResumo nivel="h2" />)}
+    </div>
+  </section>
+
+  <section class="secao envolve" aria-labelledby="outras">
+    <div class="secao-cabeca">
+      <h2 id="outras">Outras trilhas</h2>
+    </div>
+    <div class="trilhas">
+      {
+        outras.map((t) => (
+          <a class="trilha" href={`/trilhas/${t.slug}/`} data-anima style={`--cor:${t.cor};--cor-escura:${t.corEscura}`}>
+            <Capa semente={100 + t.numero} aneis={10} />
+            <span class="trilha-numero" aria-hidden="true">{t.numero}</span>
+            <h3>{t.nome}</h3>
+            <p>{t.resumo}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

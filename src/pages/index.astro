@@ -1,0 +1,196 @@
+---
+import Base from '../layouts/Base.astro';
+import Calculadora from '../components/Calculadora.astro';
+import Cartao from '../components/Cartao.astro';
+import Capa from '../components/Capa.astro';
+import { site, trilhas } from '../config';
+import { todosOsArtigos, linkDoArtigo } from '../lib/artigos';
+
+const artigos = await todosOsArtigos();
+const porNumero = (n: number) => artigos.find((a) => a.data.numero === n)!;
+const paraComecar = [1, 5, 18].map(porNumero);
+const contaExplicada = porNumero(5);
+
+const dados = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: site.nome,
+    description: site.descricao,
+    url: Astro.site,
+    inLanguage: 'pt-BR',
+    author: { '@type': 'Person', name: site.autor.nome },
+  },
+];
+---
+
+<Base dadosEstruturados={dados}>
+  <section class="heroi">
+    <canvas class="heroi-desenho" id="heroi-desenho" aria-hidden="true"></canvas>
+    <div class="envolve">
+      <div>
+        <h1>{site.frase}</h1>
+        <p class="lide">{site.descricao}</p>
+        <div class="botoes">
+          <a class="botao botao-cheio" href={linkDoArtigo(porNumero(1))}>Começar pelo artigo 1</a>
+          <a class="botao botao-vazado" href="#trilhas">Ver as cinco trilhas</a>
+        </div>
+      </div>
+      <Calculadora linkExplicacao={linkDoArtigo(contaExplicada)} />
+    </div>
+  </section>
+
+  <section class="secao envolve" aria-labelledby="comecar">
+    <div class="secao-cabeca">
+      <h2 id="comecar">Três leituras para começar</h2>
+      <p>O que existe de verdade, a conta honesta e como não cair em golpe.</p>
+    </div>
+    <div class="grade">
+      {paraComecar.map((a) => <Cartao artigo={a} comResumo />)}
+    </div>
+  </section>
+
+  <section class="secao envolve" id="trilhas" aria-labelledby="trilhas-titulo">
+    <div class="secao-cabeca">
+      <h2 id="trilhas-titulo">Escolha uma trilha</h2>
+      <p>Cinco caminhos, do primeiro passo até a renda que se mantém.</p>
+    </div>
+    <div class="trilhas trilhas-cinco">
+      {
+        trilhas.map((t) => (
+          <a class="trilha" href={`/trilhas/${t.slug}/`} data-anima style={`--cor:${t.cor};--cor-escura:${t.corEscura}`}>
+            <Capa semente={100 + t.numero} aneis={10} />
+            <span class="trilha-numero" aria-hidden="true">{t.numero}</span>
+            <h3>{t.nome}</h3>
+            <p>{t.resumo}</p>
+            <small>{artigos.filter((a) => a.data.trilha === t.numero).length} artigos</small>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="secao envolve" id="artigos" aria-labelledby="artigos-titulo">
+    <div class="secao-cabeca">
+      <h2 id="artigos-titulo">Todos os artigos</h2>
+      <p>Filtre por trilha ou procure por um assunto.</p>
+    </div>
+
+    <div class="filtro">
+      <div class="fichas" role="group" aria-label="Filtrar por trilha">
+        <button class="ficha" type="button" data-filtro="0" aria-pressed="true" style="--cor:#51646f;--cor-escura:#0c1f2b">Todas</button>
+        {
+          trilhas.map((t) => (
+            <button class="ficha" type="button" data-filtro={t.numero} aria-pressed="false" style={`--cor:${t.cor};--cor-escura:${t.corEscura}`}>
+              <i />
+              {t.curto}
+            </button>
+          ))
+        }
+      </div>
+      <div class="busca">
+        <label class="so-leitor" for="busca-campo">Procurar artigo</label>
+        <input id="busca-campo" type="search" placeholder="Procurar: golpe, celular, plataformas" autocomplete="off" />
+      </div>
+    </div>
+
+    <p class="filtro-estado" id="filtro-estado" aria-live="polite">{artigos.length} artigos</p>
+    <div class="grade" id="grade-artigos">
+      {artigos.map((a) => <Cartao artigo={a} />)}
+    </div>
+    <div class="vazio" id="filtro-vazio" hidden>
+      Nenhum artigo encontrado para essa busca. <button type="button" id="filtro-limpar">Mostrar todos os artigos</button>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { desenhar } from '../scripts/guilloche';
+
+  // Filtro por trilha e busca
+  const fichas = Array.from(document.querySelectorAll<HTMLButtonElement>('.ficha'));
+  const cartoes = Array.from(document.querySelectorAll<HTMLElement>('#grade-artigos .cartao'));
+  const campo = document.getElementById('busca-campo') as HTMLInputElement;
+  const estado = document.getElementById('filtro-estado')!;
+  const vazio = document.getElementById('filtro-vazio')!;
+  let trilha = '0';
+  const semAcento = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+  function filtrar() {
+    const termo = semAcento(campo.value.trim());
+    let visiveis = 0;
+    for (const c of cartoes) {
+      const mostra = (trilha === '0' || c.dataset.trilha === trilha) && (!termo || semAcento(c.dataset.busca ?? '').includes(termo));
+      c.hidden = !mostra;
+      if (mostra) visiveis++;
+    }
+    estado.textContent = visiveis === 1 ? '1 artigo' : `${visiveis} artigos`;
+    vazio.hidden = visiveis > 0;
+    window.dispatchEvent(new Event('resize'));
+  }
+  fichas.forEach((f) =>
+    f.addEventListener('click', () => {
+      trilha = f.dataset.filtro ?? '0';
+      fichas.forEach((o) => o.setAttribute('aria-pressed', String(o === f)));
+      filtrar();
+    }),
+  );
+  campo.addEventListener('input', filtrar);
+  document.getElementById('filtro-limpar')!.addEventListener('click', () => {
+    campo.value = '';
+    fichas[0].click();
+  });
+
+  // Desenho da abertura: gira devagar, segue o ponteiro e muda com a calculadora
+  const tela = document.getElementById('heroi-desenho') as HTMLCanvasElement;
+  const heroi = tela.parentElement!;
+  const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let t = 0;
+  let quadro = 0;
+  let visivel = true;
+  const alvo = { x: 0.74, y: 0.42 };
+  const centro = { x: 0.74, y: 0.42 };
+  let petalas = 5;
+  let ondas = 21;
+
+  function pintar() {
+    const w = tela.clientWidth;
+    const ctx = tela.getContext('2d');
+    if (!ctx) return;
+    const tracos = ctx.createLinearGradient(0, 0, w, 0);
+    tracos.addColorStop(0, 'rgba(120,210,245,0.55)');
+    tracos.addColorStop(0.55, 'rgba(255,255,255,0.6)');
+    tracos.addColorStop(1, 'rgba(255,216,74,0.75)');
+    desenhar(tela, { semente: 3, t, tracos, aneis: 18, raio: 0.52, cx: centro.x, cy: centro.y, petalas, ondas, faixa: false });
+  }
+  function girar() {
+    t += 0.006;
+    centro.x += (alvo.x - centro.x) * 0.04;
+    centro.y += (alvo.y - centro.y) * 0.04;
+    pintar();
+    if (visivel) quadro = requestAnimationFrame(girar);
+  }
+
+  document.addEventListener('conta:mudou', (e) => {
+    const { horas, taxa } = (e as CustomEvent).detail;
+    petalas = 3 + Math.round(horas);
+    ondas = 11 + Math.round(taxa);
+    if (semMovimento) pintar();
+  });
+
+  if (semMovimento) {
+    pintar();
+    window.addEventListener('resize', pintar);
+  } else {
+    heroi.addEventListener('pointermove', (e) => {
+      const r = heroi.getBoundingClientRect();
+      alvo.x = 0.74 + ((e.clientX - r.left) / r.width - 0.5) * 0.16;
+      alvo.y = 0.42 + ((e.clientY - r.top) / r.height - 0.5) * 0.22;
+    });
+    new IntersectionObserver(([entrada]) => {
+      visivel = entrada.isIntersecting;
+      cancelAnimationFrame(quadro);
+      if (visivel) girar();
+    }).observe(heroi);
+  }
+</script>

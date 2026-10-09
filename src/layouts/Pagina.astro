@@ -1,0 +1,23 @@
+---
+import Base from './Base.astro';
+import Capa from '../components/Capa.astro';
+interface Props {
+  titulo: string;
+  descricao: string;
+}
+const { titulo, descricao } = Astro.props;
+---
+
+<Base titulo={titulo} descricao={descricao}>
+  <header class="faixa">
+    <Capa semente={200 + titulo.length} aneis={16} />
+    <div class="envolve">
+      <h1>{titulo}</h1>
+    </div>
+  </header>
+  <div class="envolve pagina">
+    <div class="prosa">
+      <slot />
+    </div>
+  </div>
+</Base>

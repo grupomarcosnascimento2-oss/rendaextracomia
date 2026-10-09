@@ -1,0 +1,104 @@
+---
+import { site } from '../config';
+interface Props {
+  linkExplicacao: string;
+}
+const { linkExplicacao } = Astro.props;
+---
+
+<section class="conta" id="conta" aria-labelledby="conta-titulo">
+  <h2 id="conta-titulo">Faça a sua conta</h2>
+
+  <div class="conta-linha">
+    <label for="conta-horas">Horas pagas por dia</label>
+    <output id="conta-horas-valor" for="conta-horas">2 h</output>
+    <input id="conta-horas" type="range" min="0.5" max="6" step="0.5" value="2" />
+  </div>
+
+  <div class="conta-linha">
+    <label for="conta-taxa">Valor por hora</label>
+    <output id="conta-taxa-valor" for="conta-taxa">US$ 10</output>
+    <input id="conta-taxa" type="range" min="5" max="30" step="1" value="10" />
+  </div>
+
+  <div class="conta-linha">
+    <label for="conta-dias">Dias com tarefa no mês</label>
+    <output id="conta-dias-valor" for="conta-dias">15 dias</output>
+    <input id="conta-dias" type="range" min="1" max="22" step="1" value="15" />
+  </div>
+
+  <div class="conta-linha">
+    <label for="conta-dolar">Cotação do dólar, em reais</label>
+    <input id="conta-dolar" type="number" min="1" max="20" step="0.01" value={site.cotacaoDolar} inputmode="decimal" />
+  </div>
+
+  <dl class="conta-total" aria-live="polite">
+    <div>
+      <dt>Por dia trabalhado</dt>
+      <dd id="conta-dia">R$ 103</dd>
+    </div>
+    <div>
+      <dt>No mês</dt>
+      <dd id="conta-mes">R$ 1.545</dd>
+    </div>
+  </dl>
+
+  <p class="conta-nota">
+    Valores brutos, antes de taxas e impostos. Nenhuma plataforma garante tarefas todos os dias.{' '}
+    <a href={linkExplicacao}>Entenda a conta</a>.
+  </p>
+</section>
+
+<script>
+  const campo = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const saida = (id: string) => document.getElementById(id)!;
+  const horas = campo('conta-horas');
+  const taxa = campo('conta-taxa');
+  const dias = campo('conta-dias');
+  const dolar = campo('conta-dolar');
+
+  const reais = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  const numero = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 });
+  const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Faz o número "correr" até o novo valor.
+  const atual = new Map<string, number>();
+  const quadros = new Map<string, number>();
+  function mostrar(id: string, valor: number) {
+    const de = atual.get(id) ?? valor;
+    cancelAnimationFrame(quadros.get(id) ?? 0);
+    if (semMovimento || de === valor) {
+      atual.set(id, valor);
+      saida(id).textContent = reais.format(valor);
+      return;
+    }
+    const inicio = performance.now();
+    const passo = (agora: number) => {
+      const p = Math.min(1, (agora - inicio) / 320);
+      const v = de + (valor - de) * (1 - Math.pow(1 - p, 3));
+      atual.set(id, v);
+      saida(id).textContent = reais.format(v);
+      if (p < 1) quadros.set(id, requestAnimationFrame(passo));
+    };
+    quadros.set(id, requestAnimationFrame(passo));
+  }
+
+  function calcular() {
+    const h = Number(horas.value);
+    const t = Number(taxa.value);
+    const d = Number(dias.value);
+    const c = Number(dolar.value);
+    saida('conta-horas-valor').textContent = `${numero.format(h)} h`;
+    saida('conta-taxa-valor').textContent = `US$ ${t}`;
+    saida('conta-dias-valor').textContent = d === 1 ? '1 dia' : `${d} dias`;
+    const valido = Number.isFinite(c) && c > 0;
+    const porDia = valido ? h * t * c : 0;
+    mostrar('conta-dia', porDia);
+    mostrar('conta-mes', porDia * d);
+    // O desenho da abertura muda junto com os números.
+    document.dispatchEvent(new CustomEvent('conta:mudou', { detail: { horas: h, taxa: t, dias: d } }));
+  }
+
+  [horas, taxa, dias, dolar].forEach((el) => el.addEventListener('input', calcular));
+  calcular();
+</script>
