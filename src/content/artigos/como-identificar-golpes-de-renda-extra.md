@@ -1,10 +1,10 @@
 ---
-titulo: "Como Identificar Golpes de Renda Extra e Escolher Plataformas de IA com Mais Segurança"
+titulo: "Golpe da tarefa: como identificar e se proteger"
 descricao: "Entenda como funciona o golpe da tarefa, os sinais que o denunciam, como conferir uma plataforma de IA e o que fazer se você for vítima."
 numero: 18
 trilha: 3
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Recebi uma mensagem com proposta de tarefas pagas. O que faço?"
     resposta: "Não clique em links nem informe dados. Bloqueie o número e denuncie no próprio aplicativo de mensagens."
@@ -65,3 +65,5 @@ Criminosos usam o nome de empresas verdadeiras em anúncios e mensagens. Confira
 ## Conclusão
 
 A regra que resume tudo: trabalho paga você, golpe cobra de você. Com essa frase em mente e alguns minutos de verificação, é possível aproveitar as oportunidades reais com muito mais segurança.
+
+Para avaliar propostas que não são golpe declarado, mas prometem demais, use o método de [como avaliar sites e propostas de renda extra](/artigos/sites-de-renda-extra-que-pagam-por-tarefas/).

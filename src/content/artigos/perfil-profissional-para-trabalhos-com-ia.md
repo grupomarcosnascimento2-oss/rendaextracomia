@@ -1,10 +1,10 @@
 ---
-titulo: "Como Criar um Perfil Profissional para Conseguir Trabalhos com Inteligência Artificial"
+titulo: "Perfil profissional para conseguir trabalho com IA"
 descricao: "Como montar currículo, LinkedIn e portfólio para se candidatar a trabalhos com IA, mesmo sem experiência anterior na área."
 numero: 17
 trilha: 3
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Posso usar IA para escrever meu currículo?"
     resposta: "Pode usar como apoio, desde que revise tudo e mantenha apenas informações verdadeiras. Texto genérico e sem revisão costuma ser percebido."
@@ -77,3 +77,5 @@ A cada projeto concluído, acrescente a experiência de forma genérica, respeit
 ## Conclusão
 
 Um bom perfil é curto, verdadeiro e bem escrito. Ele funciona como sua primeira amostra de trabalho: se o currículo demonstra clareza e cuidado, o recrutador já tem a prova de que precisa.
+
+Com o perfil pronto, veja [onde procurar as vagas](/artigos/trabalhar-pela-internet-sem-experiencia/) e as [10 habilidades que mais pesam](/artigos/habilidades-para-trabalhar-com-ia/) na seleção.

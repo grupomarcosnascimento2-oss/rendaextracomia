@@ -1,10 +1,10 @@
 ---
-titulo: "Como Construir uma Fonte de Renda Online Sustentável Aprendendo a Trabalhar com IA"
+titulo: "Renda online sustentável com IA: como construir"
 descricao: "Como passar de ganhos ocasionais a uma renda online sustentável com IA: diversificação, evolução de habilidades, reserva, formalização e revisão periódica."
 numero: 30
 trilha: 5
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Quantas fontes de renda devo ter?"
     resposta: "Não há número ideal. Um bom objetivo inicial é que nenhuma fonte represente mais da metade do total."
@@ -72,3 +72,5 @@ Olhe os indicadores, encerre o que não compensa, reforce o que funciona e escol
 ## Conclusão
 
 Aprender a trabalhar com IA é o começo. A renda sustentável vem de combinar esse aprendizado com gestão: diversificar, estudar, organizar as finanças e manter um ritmo saudável. É um caminho sem garantias e sem milagres, feito de decisões bem informadas tomadas com constância.
+
+Para administrar essa renda como um negócio, veja [mentalidade de CEO para sua renda extra](/artigos/mentalidade-de-ceo-renda-extra-com-ia/). Para subir o valor da sua hora, [como sair das pequenas tarefas](/artigos/sair-das-pequenas-tarefas-online/).

@@ -1267,3 +1267,43 @@ h4 {
   font-size: var(--t0);
   color: var(--suave);
 }
+
+/* Tabelas dentro dos artigos */
+.prosa table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--titulo);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  background: var(--folha);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgb(6 23 34 / 0.06);
+}
+.prosa th,
+.prosa td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--grade);
+}
+.prosa thead th {
+  font-weight: 700;
+  color: #fff;
+  background: var(--cor-escura);
+}
+.prosa tbody tr:last-child td {
+  border-bottom: 0;
+}
+.prosa td {
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 30rem) {
+  .prosa table {
+    font-size: 0.875rem;
+  }
+  .prosa th,
+  .prosa td {
+    padding: 0.55rem 0.6rem;
+  }
+}

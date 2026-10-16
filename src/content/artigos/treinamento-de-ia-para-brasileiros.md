@@ -1,10 +1,10 @@
 ---
-titulo: "Trabalhos de Treinamento de IA para Brasileiros: Requisitos, Idiomas e Pagamentos"
+titulo: "Treinamento de IA para brasileiros: idioma e pagamento"
 descricao: "O que muda para quem mora no Brasil: plataformas que aceitam brasileiros, exigência de idiomas, pagamento em dólar, taxas e impostos."
 numero: 16
 trilha: 3
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Preciso de conta bancária no exterior?"
     resposta: "Em geral, não. O pagamento chega por serviços internacionais que permitem transferir o valor para uma conta brasileira."
@@ -69,3 +69,5 @@ Rendimentos recebidos do exterior por pessoa física costumam exigir recolhiment
 ## Conclusão
 
 O brasileiro tem espaço nesse mercado, principalmente pelo idioma. Confirme a elegibilidade, invista em inglês, entenda as taxas e regularize os recebimentos desde o primeiro pagamento.
+
+Para comparar as plataformas, veja [as 7 plataformas de treinamento de IA](/artigos/plataformas-de-treinamento-de-ia/). Para saber quanto sobra depois de taxas e câmbio, use o cálculo de [quanto paga o treinamento de IA](/artigos/quanto-paga-o-treinamento-de-ia/).

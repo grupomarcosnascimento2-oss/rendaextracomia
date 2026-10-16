@@ -1,10 +1,10 @@
 ---
-titulo: "Como Montar um Plano para Buscar R$ 100 por Dia com Tarefas de Inteligência Artificial"
+titulo: "Plano de 90 dias para buscar R$ 100 por dia com IA"
 descricao: "Um plano de 90 dias, em três fases, para buscar R$ 100 por dia com tarefas de IA, com metas semanais e indicadores para acompanhar."
 numero: 19
 trilha: 4
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "E se eu não for aprovado em nenhuma plataforma na fase 1?"
     resposta: "Estenda a fase de preparação, reforce escrita e inglês e acione o plano B com serviços diretos enquanto tenta novamente."
@@ -77,3 +77,5 @@ Olhe os indicadores. Se o problema foi aprovação, invista em escrita e inglês
 ## Conclusão
 
 Um plano de 90 dias dá ritmo e evita decisões por impulso. A meta de R$ 100 por dia fica mais próxima quando é dividida em fases, medida toda semana e acompanhada de um plano B.
+
+A conta por trás deste plano está em [é possível fazer R$ 100 por dia com IA?](/artigos/e-possivel-fazer-100-reais-por-dia-com-ia/), e a forma de encaixar os blocos no seu dia, em [rotina para trabalhar online](/artigos/organizar-rotina-para-trabalhar-online/).

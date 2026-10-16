@@ -1,10 +1,10 @@
 ---
-titulo: "Mentalidade de CEO para Quem Quer Construir uma Renda Extra com Inteligência Artificial"
+titulo: "Mentalidade de CEO para sua renda extra com IA"
 descricao: "Como aplicar a mentalidade de CEO à renda extra com IA: tratar a atividade como negócio, medir resultados, gerir riscos e decidir com dados."
 numero: 25
 trilha: 5
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Mentalidade de CEO significa abrir empresa?"
     resposta: "Não. Significa administrar sua atividade com responsabilidade, números e planejamento. Abrir empresa é uma decisão fiscal, a ser avaliada com um contador."
@@ -72,3 +72,5 @@ Uma vez por mês, reserve uma hora para revisar números, avaliar o que funciono
 ## Conclusão
 
 Mentalidade de CEO é método: assumir responsabilidade, medir, proteger-se e reinvestir. Ela não garante resultado, mas aumenta muito a qualidade das suas decisões, que é a parte que depende de você.
+
+Os números que alimentam o seu painel vêm de [quanto paga o treinamento de IA](/artigos/quanto-paga-o-treinamento-de-ia/), e o plano de longo prazo está em [renda online sustentável com IA](/artigos/renda-online-sustentavel-com-ia/).

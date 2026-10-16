@@ -1,6 +1,8 @@
 ---
 import Pagina from '../layouts/Pagina.astro';
 import { site } from '../config';
+import { todosOsArtigos } from '../lib/artigos';
+const total = (await todosOsArtigos()).length;
 
 const dados = [
   {
@@ -57,7 +59,7 @@ const dados = [
 
   <h2>O que você encontra</h2>
   <p>
-    São 30 artigos organizados em <a href="/#trilhas">cinco trilhas</a>. Eles começam pelas formas reais de ganhar
+    São {total} artigos organizados em <a href="/#trilhas">cinco trilhas</a>. Eles começam pelas formas reais de ganhar
     dinheiro na internet, explicam o trabalho de treinar inteligências artificiais, mostram onde procurar
     oportunidades e terminam com planejamento e gestão da própria renda.
   </p>

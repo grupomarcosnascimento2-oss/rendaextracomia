@@ -1,10 +1,10 @@
 ---
-titulo: "10 Habilidades que Podem Aumentar suas Oportunidades de Trabalho com Inteligência Artificial"
+titulo: "10 habilidades para trabalhar com inteligência artificial"
 descricao: "Dez habilidades valorizadas no trabalho com IA, por que cada uma importa e um exercício simples para desenvolver cada uma delas."
 numero: 27
 trilha: 5
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Qual habilidade devo desenvolver primeiro?"
     resposta: "Escrita clara. Ela é avaliada em praticamente todos os testes de entrada e sustenta as demais."
@@ -73,3 +73,5 @@ Com prática regular, a escrita e a leitura crítica melhoram de forma perceptí
 ## Conclusão
 
 Nenhuma dessas habilidades é exclusiva de quem trabalha com IA, e é isso que as torna um bom investimento: elas aumentam suas oportunidades neste mercado e em qualquer outro.
+
+Para transformar essas habilidades em um plano semanal, veja [como sair das pequenas tarefas e crescer no trabalho com IA](/artigos/sair-das-pequenas-tarefas-online/).

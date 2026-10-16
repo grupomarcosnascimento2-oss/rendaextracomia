@@ -1,10 +1,10 @@
 ---
-titulo: "Quanto Paga o Treinamento de IA? Como Calcular seus Ganhos por Hora e por Tarefa"
+titulo: "Quanto paga o treinamento de IA? Como calcular seu ganho"
 descricao: "Faixas de pagamento divulgadas no treinamento de IA e o passo a passo para calcular seu ganho real por hora, com taxas e tempo não pago."
 numero: 20
 trilha: 4
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Em que dia as plataformas pagam?"
     resposta: "Cada uma tem seu calendário, que pode ser semanal, quinzenal ou mensal. Confira na central de ajuda da plataforma."
@@ -67,3 +67,5 @@ Colunas sugeridas: data, plataforma, projeto, horas pagas, horas não pagas, val
 ## Conclusão
 
 Antes de perguntar "quanto paga?", calcule quanto sobra para você por hora total dedicada. Esse número, medido com seus próprios dados, é o que permite comparar projetos e decidir onde colocar seu tempo.
+
+Para transformar o valor por hora em meta diária, veja [é possível fazer R$ 100 por dia com IA?](/artigos/e-possivel-fazer-100-reais-por-dia-com-ia/). Câmbio, taxas e impostos de quem mora no Brasil estão em [treinamento de IA para brasileiros](/artigos/treinamento-de-ia-para-brasileiros/).

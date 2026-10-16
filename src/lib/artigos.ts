@@ -2,9 +2,17 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type Artigo = CollectionEntry<'artigos'>;
 
+// O campo "numero" é o código fixo do artigo (usado nas capas e ilustrações).
+// A ordem de leitura vem da trilha e, dentro dela, do número.
 export async function todosOsArtigos(): Promise<Artigo[]> {
   const lista = await getCollection('artigos');
-  return lista.sort((a, b) => a.data.numero - b.data.numero);
+  return lista.sort((a, b) => a.data.trilha - b.data.trilha || a.data.numero - b.data.numero);
+}
+
+// Posição do artigo na ordem de leitura (1, 2, 3...), sem lacunas.
+export async function ordemDosArtigos(): Promise<Map<string, number>> {
+  const lista = await todosOsArtigos();
+  return new Map(lista.map((a, i) => [a.id, i + 1]));
 }
 
 export const linkDoArtigo = (a: Artigo) => `/artigos/${a.id}/`;

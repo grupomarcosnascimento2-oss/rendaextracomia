@@ -1,10 +1,10 @@
 ---
-titulo: "Renda Extra com Inteligência Artificial: Como Iniciantes Podem Começar em Casa"
+titulo: "Renda extra com IA para iniciantes: como começar em casa"
 descricao: "Um roteiro para iniciantes começarem uma renda extra com IA em casa: o que é preciso ter, as duas rotas possíveis e os primeiros 30 dias."
 numero: 3
 trilha: 1
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Preciso comprar algum curso para começar?"
     resposta: "Não. Há cursos gratuitos de IA em português oferecidos por grandes empresas e instituições, e as plataformas sérias não exigem certificado pago."
@@ -58,3 +58,5 @@ No primeiro mês, o mais provável é ganhar pouco ou nada e aprender muito. O r
 ## Conclusão
 
 Começar em casa é possível, e o investimento principal é tempo e atenção. Escolha uma rota, siga o roteiro de 30 dias e avalie os resultados com números, não com impressões.
+
+Na rota de trabalhar para a IA, o caminho detalhado está no [guia do cadastro à primeira tarefa](/artigos/como-trabalhar-treinando-ia-guia-para-iniciantes/). Se você não tem experiência formal, leia antes [como encontrar trabalho com IA sem experiência](/artigos/trabalhar-pela-internet-sem-experiencia/).

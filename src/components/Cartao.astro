@@ -2,7 +2,7 @@
 import Capa from './Capa.astro';
 import Ilustracao from './Ilustracao.astro';
 import { trilhaDe } from '../config';
-import { linkDoArtigo, minutosDeLeitura, type Artigo } from '../lib/artigos';
+import { linkDoArtigo, minutosDeLeitura, ordemDosArtigos, type Artigo } from '../lib/artigos';
 
 interface Props {
   artigo: Artigo;
@@ -11,7 +11,8 @@ interface Props {
 }
 const { artigo, comResumo = false, nivel: Titulo = 'h3' } = Astro.props;
 const t = trilhaDe(artigo.data.trilha);
-const numero = String(artigo.data.numero).padStart(2, '0');
+const ordem = (await ordemDosArtigos()).get(artigo.id)!;
+const numero = String(ordem).padStart(2, '0');
 ---
 
 <a

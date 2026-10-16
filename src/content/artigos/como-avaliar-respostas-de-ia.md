@@ -1,10 +1,10 @@
 ---
-titulo: "Como Avaliar Respostas de Inteligência Artificial e Encontrar Oportunidades Remuneradas"
+titulo: "Como avaliar respostas de IA (e ser pago por isso)"
 descricao: "Aprenda os critérios usados para avaliar respostas de IA, veja um exemplo prático e descubra como treinar essa habilidade em casa."
 numero: 10
 trilha: 2
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Existe gabarito para avaliar respostas?"
     resposta: "Existe a rubrica do projeto, que define critérios e notas. Dentro dela, você aplica julgamento e precisa justificar a decisão."
@@ -62,3 +62,5 @@ As plataformas de treinamento de IA anunciam essas funções com nomes variados:
 ## Conclusão
 
 Avaliar bem é aplicar critérios com consistência e explicar a decisão com clareza. É uma habilidade treinável, útil dentro e fora das plataformas, porque quem sabe julgar uma resposta de IA também sabe usá-la melhor no próprio trabalho.
+
+Com o método treinado, veja onde se candidatar em [plataformas de treinamento de IA](/artigos/plataformas-de-treinamento-de-ia/) e como funciona o processo no [guia para iniciantes](/artigos/como-trabalhar-treinando-ia-guia-para-iniciantes/).

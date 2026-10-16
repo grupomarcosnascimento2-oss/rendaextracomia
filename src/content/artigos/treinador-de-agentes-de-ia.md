@@ -1,10 +1,10 @@
 ---
-titulo: "O Que Faz um Treinador de Agentes de IA? Entenda as Tarefas e Habilidades Necessárias"
+titulo: "Treinador de agentes de IA: tarefas e habilidades"
 descricao: "Agentes de IA executam tarefas em várias etapas. Veja o que muda no trabalho de quem os avalia e quais habilidades são necessárias."
 numero: 9
 trilha: 2
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Qual a diferença entre chatbot e agente de IA?"
     resposta: "O chatbot responde a mensagens. O agente recebe um objetivo e executa várias ações em sequência, usando ferramentas, até concluir a tarefa."
@@ -51,3 +51,5 @@ Raramente o anúncio usa a expressão "treinador de agentes". Os projetos aparec
 ## Conclusão
 
 Treinar agentes é o lado mais analítico do treinamento de IA. Exige menos volume e mais raciocínio, e valoriza a experiência profissional anterior. Para quem já domina a avaliação de respostas, é o próximo degrau natural.
+
+A base para chegar aqui é dominar [a avaliação de respostas de IA](/artigos/como-avaliar-respostas-de-ia/). Se você vem da área de processos e qualidade, use isso a seu favor no [perfil profissional](/artigos/perfil-profissional-para-trabalhos-com-ia/).

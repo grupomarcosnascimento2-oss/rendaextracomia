@@ -1,10 +1,10 @@
 ---
-titulo: "Como Organizar sua Rotina para Trabalhar Online nas Horas Livres"
+titulo: "Rotina para trabalhar online nas horas livres"
 descricao: "Método prático para encaixar o trabalho online nas horas livres: blocos de tempo, ambiente, revisão semanal e limites para proteger o descanso."
 numero: 22
 trilha: 4
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Qual o melhor horário para trabalhar?"
     resposta: "O horário em que você tem mais concentração e menos interrupções. Para alguns é cedo, antes do trabalho principal. Para outros, à noite."
@@ -76,3 +76,5 @@ Agenda do celular, uma planilha e um cronômetro resolvem. Não gaste semanas es
 ## Conclusão
 
 Rotina é o que transforma horas soltas em resultado. Mapeie seu tempo, marque blocos, prepare o ambiente e revise toda semana. Em um mês, o trabalho online deixa de competir com o descanso e passa a ter o seu lugar na agenda.
+
+Para dar um destino a esses blocos, siga o [plano de 90 dias](/artigos/plano-para-100-reais-por-dia-com-ia/) ou o plano de estudo em [como sair das pequenas tarefas](/artigos/sair-das-pequenas-tarefas-online/).

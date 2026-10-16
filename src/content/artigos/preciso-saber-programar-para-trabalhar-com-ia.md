@@ -1,10 +1,10 @@
 ---
-titulo: "Preciso Saber Programar para Trabalhar com Inteligência Artificial? A Verdade para Iniciantes"
+titulo: "Preciso saber programar para trabalhar com IA?"
 descricao: "Não é preciso programar para começar no treinamento de IA. Veja o que realmente é exigido, quando o código faz diferença e como decidir se vale aprender."
 numero: 12
 trilha: 2
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Qual linguagem aprender primeiro, se eu quiser programar?"
     resposta: "Python é a mais usada em projetos de IA e costuma ser recomendada para iniciantes pela sintaxe simples."
@@ -59,3 +59,5 @@ Mesmo sem virar programador, vale aprender o básico de planilhas, fórmulas e a
 ## Conclusão
 
 Programar não é requisito para entrar. É um dos caminhos para subir. Comece com o que você já sabe, descubra quais projetos combinam com seu perfil e só então decida qual habilidade nova merece suas horas de estudo.
+
+As faixas de pagamento por especialidade estão em [quanto paga o treinamento de IA](/artigos/quanto-paga-o-treinamento-de-ia/), e o caminho para subir de nível, em [como sair das pequenas tarefas](/artigos/sair-das-pequenas-tarefas-online/).

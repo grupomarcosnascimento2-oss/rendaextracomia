@@ -1,10 +1,10 @@
 ---
-titulo: "7 Plataformas para Encontrar Trabalhos de Treinamento de IA pela Internet"
+titulo: "7 plataformas de treinamento de IA para trabalhar online"
 descricao: "Conheça sete plataformas conhecidas de treinamento de IA, o tipo de trabalho de cada uma e o que conferir antes de se cadastrar."
 numero: 13
 trilha: 3
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Todas essas plataformas aceitam brasileiros?"
     resposta: "Não necessariamente, e a situação muda. Confirme na página oficial de cada uma se há projetos abertos para residentes no Brasil."
@@ -59,3 +59,5 @@ Nenhuma plataforma garante trabalho contínuo. Estar em duas ou três reduz os p
 ## Conclusão
 
 Use esta lista como ponto de partida para a sua pesquisa. Escolha as plataformas pelo encaixe com seu idioma e sua formação, entre pelo site oficial e nunca pague para se candidatar.
+
+Antes de se cadastrar, confira as particularidades de quem mora aqui em [treinamento de IA para brasileiros](/artigos/treinamento-de-ia-para-brasileiros/) e use o método de [como avaliar sites e propostas](/artigos/sites-de-renda-extra-que-pagam-por-tarefas/).

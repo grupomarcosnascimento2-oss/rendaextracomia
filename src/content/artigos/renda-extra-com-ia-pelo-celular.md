@@ -1,10 +1,10 @@
 ---
-titulo: "Renda Extra com IA pelo Celular: O Que Dá para Fazer e Quais São as Limitações"
+titulo: "Renda extra com IA pelo celular: o que dá e o que não dá"
 descricao: "O que é possível fazer pelo celular no trabalho com IA, o que exige computador e como começar se o celular for seu único equipamento."
 numero: 23
 trilha: 4
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Tablet resolve?"
     resposta: "Ajuda na leitura e, com teclado, na escrita. Ainda assim, muitas ferramentas de projeto são feitas para navegador de computador."
@@ -64,3 +64,5 @@ Um teclado sem fio e um suporte transformam o celular em uma estação de escrit
 ## Conclusão
 
 O celular é uma boa porta de entrada e uma ferramenta de estudo. Para alcançar as tarefas que pagam melhor, o computador continua sendo necessário. Planeje a transição com o que o próprio celular ajudar a ganhar.
+
+Os projetos de coleta de dados, os mais adequados ao celular, estão descritos em [tarefas simples para empresas de IA](/artigos/tarefas-simples-para-empresas-de-ia/). Antes de instalar qualquer aplicativo de tarefas, leia [como identificar o golpe da tarefa](/artigos/como-identificar-golpes-de-renda-extra/).

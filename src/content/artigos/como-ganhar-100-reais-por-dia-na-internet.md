@@ -1,10 +1,10 @@
 ---
-titulo: "Como Ganhar R$ 100 por Dia na Internet: 7 Maneiras Reais para Começar do Zero"
+titulo: "Como ganhar R$ 100 por dia na internet: 7 caminhos reais"
 descricao: "Sete caminhos reais para buscar R$ 100 por dia na internet, com o que cada um exige, quanto tempo leva e quais cuidados tomar antes de começar."
 numero: 1
 trilha: 1
 publicadoEm: 2026-10-09
-atualizadoEm: 2026-10-09
+atualizadoEm: 2026-10-16
 faq:
   - pergunta: "Dá para ganhar R$ 100 por dia já na primeira semana?"
     resposta: "É improvável. As primeiras semanas costumam ser de cadastro, testes e busca de clientes. O resultado aparece depois que você é aprovado em projetos ou fecha os primeiros serviços."
@@ -57,3 +57,5 @@ Promessas de R$ 100 a R$ 1.500 por dia para curtir publicações e seguir perfis
 ## Conclusão
 
 R$ 100 por dia é resultado de habilidade, horas disponíveis e demanda, três coisas que se constroem. Nos próximos artigos, detalhamos o primeiro caminho da lista: o treinamento de IA, como ele funciona e o que esperar de forma realista.
+
+Para refazer a conta com os seus números, veja [é possível fazer R$ 100 por dia com IA?](/artigos/e-possivel-fazer-100-reais-por-dia-com-ia/). Se o treinamento de IA chamou sua atenção, o próximo passo é entender [o que faz um treinador de IA](/artigos/o-que-e-um-treinador-de-ia/).
