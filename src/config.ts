@@ -12,7 +12,7 @@ export const site = {
     foto: '',
   },
   // E-mail exibido na página de Contato e na Privacidade. Vazio: a página de Contato fica fora do menu.
-  contato: '',
+  contato: 'grupomarcosnascimento@gmail.com',
   // Enquanto for false, o site pede aos buscadores que não o indexem (versão de teste).
   indexavel: false,
   // Google AdSense. Enquanto 'cliente' estiver vazio, nenhum código do Google entra no site.
