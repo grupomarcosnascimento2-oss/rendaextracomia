@@ -6,8 +6,8 @@ import { fontes } from '../dados/fontes';
 
 <Pagina titulo="Fontes consultadas" descricao={`Anúncios de vagas, relatórios e reportagens usados nos artigos do ${site.nome}, com link para cada origem.`}>
   <p>
-    Os dados de remuneração, plataformas e golpes citados nos artigos vêm das fontes abaixo, consultadas em 9 de
-    outubro de 2026. As conversões para reais usam o dólar a R$ 5,15, cotação de referência de setembro de 2026.
+    Os dados de remuneração, plataformas e golpes citados nos artigos vêm das fontes abaixo, consultadas em 9 e 16
+    de outubro de 2026. As conversões para reais usam o dólar a R$ 5,15, cotação de referência de setembro de 2026.
   </p>
   <ul class="fontes-lista">
     {fontes.map((f) => <li><a href={f.url} rel="noopener">{f.titulo}</a></li>)}

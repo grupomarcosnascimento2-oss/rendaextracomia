@@ -1,4 +1,4 @@
-// Fontes públicas consultadas para os artigos (9 de outubro de 2026).
+// Fontes públicas consultadas para os artigos (9 e 16 de outubro de 2026).
 export const fontes: { titulo: string; url: string }[] = [
   { titulo: "Computer Weekly Brasil — Brasil apresentou crescimento de 642% na contratação de treinadores de IA em 2025", url: "https://www.computerweekly.com/br/noticias/366642381/Brasil-apresentou-crescimento-de-642-na-contratacao-de-treinadores-de-IA-em-2025" },
   { titulo: "Convergência Digital — Treinador de IA: carreira cresceu 642%", url: "https://convergenciadigital.com.br/?p=51392" },
@@ -21,4 +21,7 @@ export const fontes: { titulo: string; url: string }[] = [
   { titulo: "Meelion — Valor do dólar hoje (cotação de referência de 16/09/2026)", url: "https://www.meelion.com/indicadores-financeiros/dolar-hoje/" },
   { titulo: "Canaltech — Amazon oferece plataforma de treinamento de IA gratuito (AWS Treina Brasil)", url: "https://canaltech.com.br/mercado/amazon-oferece-plataforma-de-treimento-de-ia-e-computacao-na-nuvem-gratuito/" },
   { titulo: "Google — Google for Brasil 2026", url: "https://blog.google/intl/pt-br/novidades/tecnologia/google-for-brasil-2026/" },
+  { titulo: "Contábeis — Pix: prazo para contestar devolução pelo MED aumenta (MED 2.0 e prazo de 80 dias)", url: "https://www.contabeis.com.br/noticias/79188/pix-prazo-para-contestar-devolucao-pelo-med-aumenta/" },
+  { titulo: "Trivium Contábil — Carnê-leão em 2026: isenção até R$ 5 mil e vencimento do DARF", url: "https://triviumcontabil.com.br/carne-leao/" },
+  { titulo: "Fast Company Brasil — Carnê-leão 2026: quem precisa pagar", url: "https://fastcompanybrasil.com/money/carne-leao-2026-quem-precisa-pagar-como-preencher-e-qual-o-valor/" },
 ];

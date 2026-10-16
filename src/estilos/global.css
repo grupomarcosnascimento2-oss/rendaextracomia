@@ -1307,3 +1307,15 @@ h4 {
     padding: 0.55rem 0.6rem;
   }
 }
+/* No celular, tabelas largas rolam de lado dentro do próprio espaço, sem quebrar palavras */
+@media (max-width: 40rem) {
+  .prosa table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .prosa th,
+  .prosa td {
+    min-width: 7.5rem;
+  }
+}
