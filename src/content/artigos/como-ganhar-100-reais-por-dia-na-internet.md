@@ -1,6 +1,6 @@
 ---
 titulo: "Como ganhar R$ 100 por dia na internet: 7 caminhos reais"
-descricao: "Sete caminhos reais para buscar R$ 100 por dia na internet, comparados por exigência, prazo e risco, com um teste para escolher o seu e os cuidados antes de começar."
+descricao: "Sete caminhos reais para buscar R$ 100 por dia na internet, comparados por exigência, prazo e risco, com um teste para escolher por onde começar."
 numero: 1
 trilha: 1
 publicadoEm: 2026-10-09
