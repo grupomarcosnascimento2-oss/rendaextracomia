@@ -12,7 +12,7 @@ export const site = {
   // Enquanto for false, o site pede aos buscadores que não o indexem (versão de teste).
   indexavel: false,
   // Publicidade: código da zona na rede Adcash. Deixe '' para desligar os anúncios.
-  adcashZona: '4wozlozcss',
+  adcashZona: '', // tag automática (zona 4wozlozcss) desligada: só o banner fica ativo
   // Zona do banner da Adcash, exibido no fim dos artigos e nas páginas de lista. '' desliga o banner.
   adcashBanner: '12292814',
   cotacaoDolar: 5.15,
