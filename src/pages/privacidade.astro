@@ -1,18 +1,65 @@
 ---
 import Pagina from '../layouts/Pagina.astro';
 import { site } from '../config';
+const comAnuncios = !!site.adsense.cliente;
 ---
 
-<Pagina titulo="Privacidade" descricao={`Quais dados o ${site.nome} coleta de quem visita o site e como eles são tratados.`}>
+<Pagina titulo="Privacidade" descricao={`Quais dados o ${site.nome} coleta de quem visita o site, como são tratados e como exercer seus direitos.`}>
+  <p>Última atualização: outubro de 2026.</p>
+
+  <h2>Quem é o responsável</h2>
+  <p>
+    O {site.nome} é mantido por {site.autor.nome}, responsável pelo tratamento dos dados descritos nesta página, nos
+    termos da Lei Geral de Proteção de Dados (Lei 13.709/2018).
+    {site.contato && <> Para qualquer assunto sobre privacidade, escreva para <a href={`mailto:${site.contato}`}>{site.contato}</a>.</>}
+  </p>
+
   <h2>O que o site coleta</h2>
   <p>
     O blog não tem cadastro, formulário nem área de login, e não pede nome, e-mail ou telefone a quem o visita.
   </p>
 
-  <h2>Anúncios e cookies</h2>
-  <p>
-    O blog não exibe anúncios e não usa cookies de publicidade nem ferramentas de rastreamento de visitantes.
-  </p>
+  {
+    comAnuncios ? (
+      <>
+        <h2>Anúncios do Google e cookies</h2>
+        <p>
+          O blog exibe anúncios do Google AdSense. O Google e outros fornecedores de anúncios parceiros dele usam
+          cookies para exibir anúncios com base nas visitas anteriores do usuário a este e a outros sites, e para medir
+          o desempenho da publicidade. O cookie de publicidade do Google permite que ele e seus parceiros mostrem
+          anúncios com base nessas visitas.
+        </p>
+        <p>
+          Os anúncios só são carregados depois que você clica em "Aceitar" no aviso de cookies. Se você recusar, nenhum
+          código do Google é carregado e o conteúdo do blog continua disponível do mesmo jeito. Para mudar a escolha,
+          use o link "Preferências de cookies", no rodapé de qualquer página.
+        </p>
+        <p>Você também pode controlar a publicidade personalizada diretamente no Google:</p>
+        <ul>
+          <li>
+            Desativar ou ajustar os anúncios personalizados em{' '}
+            <a href="https://myadcenter.google.com/" rel="noopener">Minha Central de Anúncios do Google</a>.
+          </li>
+          <li>
+            Desativar o uso de cookies por outros fornecedores de anúncios personalizados em{' '}
+            <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a>.
+          </li>
+          <li>
+            Ler como o Google usa dados de sites parceiros em{' '}
+            <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">
+              policies.google.com/technologies/partner-sites
+            </a>
+            .
+          </li>
+        </ul>
+      </>
+    ) : (
+      <>
+        <h2>Anúncios e cookies</h2>
+        <p>O blog não exibe anúncios e não usa cookies de publicidade nem ferramentas de rastreamento de visitantes.</p>
+      </>
+    )
+  }
 
   <h2>Registros de acesso</h2>
   <p>
@@ -25,6 +72,14 @@ import { site } from '../config';
     Os números digitados na calculadora ficam apenas no seu navegador. Eles não são enviados nem armazenados.
   </p>
 
+  <h2>Seus direitos</h2>
+  <p>
+    Pela LGPD, você pode pedir confirmação de que seus dados são tratados, acesso, correção e exclusão deles, além de
+    revogar um consentimento dado.
+    {site.contato ? <> Faça o pedido pelo e-mail <a href={`mailto:${site.contato}`}>{site.contato}</a>.</> : null}
+    {comAnuncios && <> Os dados usados pelos anúncios são tratados pelo Google, que também atende a esses pedidos.</>}
+  </p>
+
   <h2>Links externos</h2>
   <p>
     Os artigos e a página de fontes têm links para outros sites, que seguem as próprias políticas de privacidade.
@@ -32,7 +87,7 @@ import { site } from '../config';
 
   <h2>Mudanças nesta página</h2>
   <p>
-    Se o blog passar a usar estatísticas de acesso, lista de e-mails ou anúncios, esta página será
+    Se o blog passar a usar estatísticas de acesso, lista de e-mails ou outra forma de publicidade, esta página será
     atualizada antes, com a descrição dos dados coletados e de como pedir a exclusão.
   </p>
 </Pagina>

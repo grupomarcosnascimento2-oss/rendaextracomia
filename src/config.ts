@@ -8,13 +8,20 @@ export const site = {
   autor: {
     nome: 'Marcos Nascimento',
     bio: 'Profissional de TI desde 1995, com mais de 25 anos em gestão de projetos e métodos ágeis.',
+    // Foto opcional, em public/ (ex.: '/marcos.jpg'). Sem foto, aparece a inicial do nome.
+    foto: '',
   },
+  // E-mail exibido na página de Contato e na Privacidade. Vazio: a página de Contato fica fora do menu.
+  contato: '',
   // Enquanto for false, o site pede aos buscadores que não o indexem (versão de teste).
   indexavel: false,
-  // Publicidade (Adcash): desligada. Para religar, preencha a zona do banner ('12292814')
-  // e revise as páginas de Privacidade, Sobre e Aviso legal.
-  adcashZona: '',
-  adcashBanner: '',
+  // Google AdSense. Enquanto 'cliente' estiver vazio, nenhum código do Google entra no site.
+  // cliente: o código de editor, no formato 'ca-pub-0000000000000000'.
+  // blocoConteudo: código de um bloco de anúncio (opcional). Sem ele, valem só os anúncios automáticos.
+  adsense: {
+    cliente: '',
+    blocoConteudo: '',
+  },
   cotacaoDolar: 5.15,
   conferidoEm: 'outubro de 2026',
 };

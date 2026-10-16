@@ -4,11 +4,12 @@ import Capa from '../components/Capa.astro';
 interface Props {
   titulo: string;
   descricao: string;
+  dadosEstruturados?: object[];
 }
-const { titulo, descricao } = Astro.props;
+const { titulo, descricao, dadosEstruturados = [] } = Astro.props;
 ---
 
-<Base titulo={titulo} descricao={descricao}>
+<Base titulo={titulo} descricao={descricao} dadosEstruturados={dadosEstruturados}>
   <header class="faixa">
     <Capa semente={200 + titulo.length} aneis={16} />
     <div class="envolve">

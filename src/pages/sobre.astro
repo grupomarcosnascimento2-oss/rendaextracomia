@@ -1,12 +1,58 @@
 ---
 import Pagina from '../layouts/Pagina.astro';
 import { site } from '../config';
+
+const dados = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: site.autor.nome,
+    description: site.autor.bio,
+    jobTitle: 'Profissional de TI e Scrum Master',
+    knowsAbout: ['Gestão de projetos', 'Métodos ágeis', 'Scrum', 'Inteligência artificial'],
+    hasCredential: ['Bacharelado em Ciência da Computação', 'MBA em Gestão Pública', 'MBA em Gestão de Projetos e Frameworks Ágeis', 'Professional Scrum Master I (PSM I)'],
+  },
+];
 ---
 
-<Pagina titulo="Sobre o blog" descricao={`Quem escreve o ${site.nome}, como o conteúdo é feito e o que o blog se compromete a não prometer.`}>
+<Pagina
+  titulo="Sobre o blog"
+  descricao={`Quem escreve o ${site.nome}: ${site.autor.nome}, profissional de TI desde 1995. Como o conteúdo é feito e o que o blog não promete.`}
+  dadosEstruturados={dados}
+>
   <p>
     O {site.nome} é para quem quer complementar a renda usando inteligência artificial e não aceita promessa de
     dinheiro fácil. Aqui, toda meta vem acompanhada da conta: quantas horas, a que valor, com quais riscos.
+  </p>
+
+  <h2>Quem escreve</h2>
+  <div class="autor">
+    {
+      site.autor.foto ? (
+        <img class="autor-foto" src={site.autor.foto} alt={`Foto de ${site.autor.nome}`} width="112" height="112" />
+      ) : (
+        <span class="autor-foto autor-inicial" aria-hidden="true">{site.autor.nome.charAt(0)}</span>
+      )
+    }
+    <div>
+      <p class="autor-nome">{site.autor.nome}</p>
+      <p class="autor-cargo">Profissional de TI e Scrum Master</p>
+    </div>
+  </div>
+  <p>
+    {site.autor.nome} trabalha com tecnologia desde 1995. São mais de 25 anos em gestão de projetos e métodos ágeis,
+    boa parte deles em grandes instituições públicas federais: Polícia Rodoviária Federal, Exército Brasileiro,
+    Tribunal Superior Eleitoral, Ministério da Educação, Ministério da Agricultura e Senado Federal.
+  </p>
+  <ul>
+    <li>Bacharel em Ciência da Computação</li>
+    <li>MBA em Gestão Pública</li>
+    <li>MBA em Gestão de Projetos e Frameworks Ágeis</li>
+    <li>Certificação Professional Scrum Master I (PSM I)</li>
+  </ul>
+  <p>
+    O lema que orienta o trabalho é "TI com Propósito Transforma". Neste blog, isso significa explicar a inteligência
+    artificial com o mesmo cuidado de um projeto bem gerido: objetivo claro, números verificáveis e riscos à vista.
   </p>
 
   <h2>O que você encontra</h2>
@@ -24,15 +70,21 @@ import { site } from '../config';
     </li>
     <li>Todo valor tem data. Remuneração, plataformas e países aceitos mudam, e os artigos avisam quando foram conferidos.</li>
     <li>R$ 100 por dia é tratado como meta de planejamento. Nenhum texto garante resultado.</li>
-    <li>O blog não exibe anúncios.</li>
+    {
+      site.adsense.cliente ? (
+        <li>
+          O blog exibe anúncios do Google. Quem escolhe cada anúncio é o Google, não o blog, e os anúncios não são
+          recomendação.
+        </li>
+      ) : (
+        <li>O blog não exibe anúncios.</li>
+      )
+    }
     <li>
       Nenhuma plataforma citada nos artigos paga para aparecer, e o blog não recebe comissão delas. Se isso mudar, o
       aviso aparecerá no próprio artigo.
     </li>
   </ul>
-
-  <h2>Quem escreve</h2>
-  <p>{site.autor.nome}. {site.autor.bio}</p>
 
   <h2>O que este blog não faz</h2>
   <ul>
@@ -44,4 +96,11 @@ import { site } from '../config';
     Recebeu uma proposta de tarefas pagas por mensagem? Leia antes
     <a href="/artigos/como-identificar-golpes-de-renda-extra/">como identificar golpes de renda extra</a>.
   </p>
+  {
+    site.contato && (
+      <p>
+        Encontrou um erro ou um valor desatualizado? <a href="/contato/">Fale com o autor</a>.
+      </p>
+    )
+  }
 </Pagina>

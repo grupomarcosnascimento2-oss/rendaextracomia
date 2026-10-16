@@ -1,14 +1,25 @@
 ---
-// Espaço de banner da Adcash. Fica oculto até o visitante aceitar os cookies;
-// quem monta o banner é o script do cabeçalho (layouts/Base.astro).
+// Bloco de anúncio do AdSense. Só aparece com o código de editor e o código do bloco
+// configurados em src/config.ts, e só é preenchido depois que o visitante aceita os cookies.
+// Fica longe de botões e da calculadora, como pedem as regras do AdSense.
 import { site } from '../config';
+const { cliente, blocoConteudo } = site.adsense;
 ---
 
 {
-  site.adcashBanner && (
+  cliente && blocoConteudo && (
     <aside class="anuncio" aria-label="Publicidade" hidden>
       <p class="anuncio-rotulo">Publicidade</p>
-      <div class="anuncio-espaco" data-anuncio-banner={site.adcashBanner} />
+      <div class="anuncio-espaco">
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client={cliente}
+          data-ad-slot={blocoConteudo}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      </div>
     </aside>
   )
 }

@@ -22,46 +22,31 @@ const pagina = Astro.url.pathname;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {site.adsense.cliente && <meta name="google-adsense-account" content={site.adsense.cliente} />}
     {
-      (site.adcashZona || site.adcashBanner) && (
-        <script is:inline define:vars={{ zona: site.adcashZona }}>
-          // Anúncios Adcash: a biblioteca, a tag e os banners só entram na página com o consentimento do visitante.
-          // Cada banner é montado dentro do seu próprio espaço, como a Adcash pede.
-          // Atenção: antes de a biblioteca carregar, window.aclib aponta para a própria tag <script id="aclib">.
-          // Por isso o teste é pela função, e não só pela existência de window.aclib.
-          var bibliotecaPronta = function () {
-            return !!window.aclib && typeof window.aclib.runBanner === 'function';
-          };
-          window.montarBanners = function () {
-            if (!bibliotecaPronta()) return;
-            var espacos = document.querySelectorAll('[data-anuncio-banner]:not([data-montado])');
-            for (var i = 0; i < espacos.length; i++) {
-              var espaco = espacos[i];
-              espaco.setAttribute('data-montado', '');
-              espaco.parentElement.hidden = false;
-              var tag = document.createElement('script');
-              tag.type = 'text/javascript';
-              tag.text = "aclib.runBanner({ zoneId: '" + espaco.getAttribute('data-anuncio-banner') + "' });";
-              espaco.appendChild(tag);
+      site.adsense.cliente && (
+        <script is:inline define:vars={{ cliente: site.adsense.cliente }}>
+          // Google AdSense: o código só entra na página depois que o visitante aceita os cookies.
+          window.carregarAnuncios = function () {
+            if (document.getElementById('adsense')) return;
+            var s = document.createElement('script');
+            s.id = 'adsense';
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + cliente;
+            document.head.appendChild(s);
+            var blocos = document.querySelectorAll('ins.adsbygoogle:not([data-pedido])');
+            for (var i = 0; i < blocos.length; i++) {
+              blocos[i].setAttribute('data-pedido', '');
+              blocos[i].closest('.anuncio').hidden = false;
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
             }
           };
-          window.carregarAnuncios = function () {
-            if (document.getElementById('aclib')) return;
-            var s = document.createElement('script');
-            s.id = 'aclib';
-            s.type = 'text/javascript';
-            s.src = '//acscdn.com/script/aclib.js';
-            s.onload = function () {
-              if (!bibliotecaPronta()) return;
-              if (zona) window.aclib.runAutoTag({ zoneId: zona });
-              window.montarBanners();
-            };
-            document.head.appendChild(s);
-          };
-          document.addEventListener('DOMContentLoaded', window.montarBanners);
+          var aceito = false;
           try {
-            if (localStorage.getItem('consentimento-cookies') === 'aceito') window.carregarAnuncios();
+            aceito = localStorage.getItem('consentimento-cookies') === 'aceito';
           } catch (e) {}
+          if (aceito) document.addEventListener('DOMContentLoaded', window.carregarAnuncios);
         </script>
       )
     }
@@ -111,12 +96,13 @@ const pagina = Astro.url.pathname;
           <a href="/fontes/">Fontes</a>
           <a href="/aviso-legal/">Aviso legal</a>
           <a href="/privacidade/">Privacidade</a>
-          {(site.adcashZona || site.adcashBanner) && <button type="button" class="base-botao" data-abrir-cookies>Preferências de cookies</button>}
+          {site.contato && <a href="/contato/">Contato</a>}
+          {site.adsense.cliente && <button type="button" class="base-botao" data-abrir-cookies>Preferências de cookies</button>}
         </nav>
       </div>
     </footer>
 
-    {(site.adcashZona || site.adcashBanner) && <Consentimento />}
+    {site.adsense.cliente && <Consentimento />}
 
     <script>
       import '../scripts/capas.ts';

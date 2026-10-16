@@ -1,0 +1,34 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import { site } from '../config';
+---
+
+<Pagina titulo="Contato" descricao={`Como falar com ${site.autor.nome}, autor do ${site.nome}.`}>
+  {
+    site.contato ? (
+      <>
+        <p>
+          Para falar com {site.autor.nome}, escreva para <a href={`mailto:${site.contato}`}>{site.contato}</a>.
+        </p>
+        <h2>Quando escrever</h2>
+        <ul>
+          <li>Você encontrou um valor desatualizado, um link quebrado ou um erro em algum artigo.</li>
+          <li>Quer sugerir um tema para um próximo artigo.</li>
+          <li>Tem um pedido sobre os seus dados, conforme a página de <a href="/privacidade/">Privacidade</a>.</li>
+        </ul>
+        <h2>O que não respondemos</h2>
+        <p>
+          O blog não indica vagas, não faz cadastro em plataformas e não analisa propostas individuais de trabalho. Se
+          você recebeu uma oferta de tarefas pagas, leia{' '}
+          <a href="/artigos/como-identificar-golpes-de-renda-extra/">como identificar golpes de renda extra</a>.
+        </p>
+        <p>
+          O blog nunca entra em contato por WhatsApp oferecendo trabalho. Mensagens assim usando o nome do blog são
+          golpe.
+        </p>
+      </>
+    ) : (
+      <p>O canal de contato será publicado em breve. Enquanto isso, veja a página <a href="/sobre/">Sobre</a>.</p>
+    )
+  }
+</Pagina>

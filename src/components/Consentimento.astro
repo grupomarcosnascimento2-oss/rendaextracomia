@@ -7,8 +7,8 @@
   <div class="aviso-cookies-texto">
     <h2>Cookies de publicidade</h2>
     <p>
-      Este blog se mantém com anúncios da rede Adcash, que usa cookies para exibir e medir a publicidade. Se você
-      recusar, o blog funciona igual, sem anúncios. <a href="/privacidade/">Ler a página de Privacidade</a>
+      Este blog exibe anúncios do Google, que usa cookies para mostrar e medir a publicidade. Se você recusar, o blog
+      funciona igual, sem anúncios. <a href="/privacidade/">Ler a página de Privacidade</a>
     </p>
   </div>
   <div class="aviso-cookies-botoes">
@@ -44,7 +44,7 @@
   });
 
   document.getElementById('cookies-recusar')!.addEventListener('click', () => {
-    const anunciosAtivos = !!document.getElementById('aclib');
+    const anunciosAtivos = !!document.getElementById('adsense');
     guardar('recusado');
     aviso.hidden = true;
     // Se os anúncios já estavam ligados, recarrega a página para desligá-los.

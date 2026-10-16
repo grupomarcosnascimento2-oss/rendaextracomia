@@ -1217,7 +1217,7 @@ h4 {
   text-align: center;
 }
 
-/* O banner da Adcash vem com 728 px de largura. Aqui ele encolhe para caber na coluna
+/* Anúncios largos encolhem para caber na coluna
    e no celular, sem barras de rolagem. */
 .anuncio-espaco {
   overflow: hidden;
@@ -1230,4 +1230,40 @@ h4 {
 .anuncio-espaco img {
   max-width: 100% !important;
   height: auto !important;
+}
+
+/* Autor na página Sobre */
+.autor {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.autor-foto {
+  flex: none;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.autor-inicial {
+  display: grid;
+  place-items: center;
+  font-family: var(--titulo);
+  font-stretch: 76%;
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: #fff;
+  background: linear-gradient(150deg, var(--azul), var(--cor-escura));
+}
+.prosa .autor-nome {
+  margin: 0;
+  font-family: var(--titulo);
+  font-weight: 760;
+  font-size: var(--t1);
+}
+.prosa .autor-cargo {
+  margin: 0.15rem 0 0;
+  font-family: var(--titulo);
+  font-size: var(--t0);
+  color: var(--suave);
 }
